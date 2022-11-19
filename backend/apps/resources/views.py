@@ -51,7 +51,11 @@ class ResourceViewSet(viewsets.ModelViewSet):
     )
 
     serializer_class = ResourceSerializer
-    permission_classes = [IsSuperUserOrCreator, ]
+
+    def get_permissions(self):
+        if self.action in ['destroy', 'update', 'partial_update', 'create']:
+            self.permission_classes = [IsSuperUserOrCreator]
+        return super(ResourceViewSet, self).get_permissions()
 
     def get_queryset(self):
         if self.request is None:
@@ -62,9 +66,6 @@ class ResourceViewSet(viewsets.ModelViewSet):
 
         qs = Resource.objects.filter(is_deleted=False)
 
-        # 用户不是超级用户
-        if not self.request.user.is_superuser:
-            qs = qs.filter(creator=self.request.user)
         return qs.order_by('-created_time')
 
     def perform_create(self, serializer):

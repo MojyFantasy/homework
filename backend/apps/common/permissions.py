@@ -18,6 +18,6 @@ class IsSuperUserOrCreator(BasePermission):
     def has_object_permission(self, request, view, obj):
         if request.user and request.user.is_superuser:
             return True
-        if hasattr(obj, 'creator') and request.user is obj.creator:
+        if hasattr(obj, 'creator') and request.user == obj.creator:
             return True
         return False

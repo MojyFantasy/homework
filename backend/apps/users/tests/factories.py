@@ -4,8 +4,6 @@ import factory
 from django.contrib.auth import get_user_model
 from factory import DjangoModelFactory, Faker, post_generation
 
-from users.models import Org
-
 
 class UserFactory(DjangoModelFactory):
 
@@ -27,12 +25,3 @@ class UserFactory(DjangoModelFactory):
     class Meta:
         model = get_user_model()
         django_get_or_create = ["username"]
-
-
-class OrgFactory(DjangoModelFactory):
-
-    name = factory.Faker('name')
-    code = factory.Sequence(lambda n: "test info {}".format(n))
-
-    class Meta:
-        model = Org

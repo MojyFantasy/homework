@@ -58,7 +58,7 @@ class UserViewSet(viewsets.ModelViewSet):
             self.permission_classes = [IsAuthenticated]
         elif self.action == 'register':
             self.permission_classes = [AllowAny]
-        elif self.action in ['destroy', 'update', 'partial_update']:
+        elif self.action in ['destroy', 'update', 'partial_update', 'create']:
             self.permission_classes = [IsSuperUser]
         return super(UserViewSet, self).get_permissions()
 
