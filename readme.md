@@ -46,6 +46,6 @@ docker exec -it homework-web-1 /bin/bash start.sh
 
 ### 访问项目
 
-- 访问地址：http://localhost:8000
+- 访问地址：http://localhost:80/
 - 账号：`admin`密码：`admin`
 
