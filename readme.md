@@ -11,7 +11,7 @@ Mysql >= 5.7.0 (可选，默认数据库sqlite3)
 
 ### 下载代码
 
-- 通过 `git clone https://gitee.com/liqianglog/django-vue-admin.git` 下载到工作目录
+- 通过 `git clone https://github.com/MojyFantasy/homework.git` 下载到工作目录
 
 ### 本地运行
 
@@ -39,7 +39,7 @@ Mysql >= 5.7.0 (可选，默认数据库sqlite3)
 
 ```text
 # 先安装docker-compose (自行百度安装)
-# 通过 `git clone https://gitee.com/liqianglog/django-vue-admin.git` 下载到工作目录，执行此命令等待安装
+# 通过 `git clone https://github.com/MojyFantasy/homework.git` 下载到工作目录，执行此命令等待安装
 docker-compose up -d
 docker exec -it homework-web-1 /bin/bash start.sh
 ```
