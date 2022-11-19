@@ -1,0 +1,7 @@
+/node_modules
+/backend/PIPENV_VENV_IN_PROJECT
+__pycache__/
+*.pyc
+.idea/
+.env
+*.log
